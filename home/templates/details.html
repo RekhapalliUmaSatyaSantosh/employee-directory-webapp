@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(50, 11, 11);
+        color: #1e293b;
+        min-height: 100vh;
+    }
+    .main{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 20px;
+    }
+    .sec2{
+        width: 100%;
+        max-width: 600px;
+        background: #582222;
+        padding: 35px;
+        border-radius: 18px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+    }
+    .d11{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+    .d12{
+        width: 75px;
+        height: 75px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: bold;
+        box-shadow: 0 6px 15px rgba(99, 102, 241, 0.25);
+    }
+    .d11 h1{
+        font-size: 26px;
+        font-weight: 700;
+        color: #bdbebf;
+        overflow-wrap: anywhere;
+    }
+    .p1{
+        margin-top: 7px;
+        color: #dce7f7;
+        font-size: 14px;
+    }
+    .d13{
+        width: 100%;
+        height: 1px;
+        background: #e2e8f0;
+        margin-bottom: 25px;
+    }
+    .sec2 h2{
+        font-size: 19px;
+        color: #eaedf1;
+        margin-bottom: 12px;
+    }
+    .d14,.d15,.d16{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .d14 span,.d15 span,.d16 span{
+        color: #d4d5d6;
+        font-size: 15px;
+    }
+    .d14 strong,.d15 strong,.d16 strong{
+        color: #ebeef3;
+        font-size: 15px;
+        text-align: right;
+        overflow-wrap: anywhere;
+    }
+    .btn{
+        display: inline-block;
+        margin-top: 28px;
+        padding: 13px 22px;
+        border-radius: 10px;
+        background: #1c1b37;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn:hover{
+        background: #2a2376;
+        transform: translateY(-2px);
+    }
+    @media (max-width: 480px){
+        .sec2{
+            padding: 24px 20px;
+            border-radius: 14px;
+        }
+        .d11{
+            gap: 14px;
+        }
+        .d12{
+            width: 60px;
+            height: 60px;
+            font-size: 26px;
+            border-radius: 14px;
+        }
+        .d11 h1{
+            font-size: 21px;
+        }
+        .d14,.d15,.d16{
+            gap: 12px;
+            padding: 17px 0;
+        }}
+    </style>
+</head>
+<body>
+    <main class="main">
+        <section class="sec2">
+            <div class="d11">
+                <div class="d12">
+                    {{ employee.name|first|upper }}
+                </div>
+                <div>
+                    <h1>{{ employee.name }}</h1>
+                    <p class="p1">Employee</p>
+                </div>
+            </div>
+            <div class="d13"></div>
+            <h2>Personal information</h2>
+            <div class="d14">
+                <span>Full name</span>
+                <strong>{{ employee.name }}</strong>
+            </div>
+            <div class="d15">
+                <span>Age</span>
+                <strong>{{ employee.age }} years</strong>
+            </div>
+            <div class="d16">
+                <span>Salary</span>
+                <strong>{{ employee.salary }}</strong>
+            </div>
+            <a class="btn" href="{% url 'index' %}">Back to directory</a>
+        </section>
+    </main>
+</body>
+</html>
